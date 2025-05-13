@@ -55,8 +55,6 @@ def detect_audio(sample_rate=44100,duration=5):
                 os.remove(filename)
                 print(f"Deleted file: {filename}")
 
-        time.sleep(1)
-
 def video_frames():
     global video_emotion_Latest
     face_classifier = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
@@ -137,7 +135,7 @@ def merged_emotion():
     return jsonify({
         'audio_emotion': audio_emotion_Latest,
         'video_emotion': video_emotion_Latest,
-        'merged_emotion': merged_emotion
+        'merged_emotion': merged_emotion,
     })
 
 if __name__ == '__main__':
